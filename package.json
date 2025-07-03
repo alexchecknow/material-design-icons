@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/google/material-design-icons",
   "scripts": {
-    "build": "gulp",
+    "build": "npx gulp",
     "prepare": "npm run build"
   },
   "devDependencies": {

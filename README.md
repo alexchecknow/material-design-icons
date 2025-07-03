@@ -39,7 +39,7 @@ npm install
 npm run build
 ```
 
-This invokes `gulp` to recreate the PNG and SVG sprites under the `sprites` directory.
+The `prepare` hook runs this command automatically after installing dependencies, so `npm install` will usually regenerate the files for you. This invokes `gulp` to recreate the PNG and SVG sprites under the `sprites` directory.
 
 ## Polymer icons
 
