@@ -19,6 +19,10 @@
     "url": "https://github.com/google/material-design-icons/issues"
   },
   "homepage": "https://github.com/google/material-design-icons",
+  "scripts": {
+    "build": "gulp",
+    "prepare": "npm run build"
+  },
   "devDependencies": {
     "babel-core": "^6.1.2",
     "babel-preset-es2015": "^6.1.2",

@@ -30,6 +30,17 @@ Read more in the [font portion](https://google.github.io/material-design-icons/#
 
 The `css-sprite` and `svg-sprite` folders contain pre-generated sprite sheets, as well as svg symbols that can be `<use>`d more directly and with fewer constraints. Instructions for using them are in the [sprites documentation](https://github.com/google/material-design-icons/tree/master/sprites).
 
+### Regenerating sprites
+
+If you modify the source icons, install dependencies and run the build script to update the sprite sheets:
+
+```bash
+npm install
+npm run build
+```
+
+This invokes `gulp` to recreate the PNG and SVG sprites under the `sprites` directory.
+
 ## Polymer icons
 
 If you wish to use the icon set with Polymer, we recommend consuming them via the [`<iron-icons>`](https://github.com/polymerelements/iron-icons) element ([`<core-icons>`](https://github.com/Polymer/core-icons) in v0.5).
