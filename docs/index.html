@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material Icons Explorer</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .icon-item i {
+      font-size: 36px;
+    }
+    .icon-label {
+      margin-top: 8px;
+      font-size: 12px;
+      text-align: center;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+<h1>Material Icons Explorer</h1>
+<div id="icons" class="grid"></div>
+<script>
+fetch('../iconfont/codepoints')
+  .then(function(response) { return response.text(); })
+  .then(function(text) {
+    var container = document.getElementById('icons');
+    text.split(/\n/).forEach(function(line) {
+      if (!line.trim()) return;
+      var parts = line.split(' ');
+      var name = parts[0];
+      var item = document.createElement('div');
+      item.className = 'icon-item';
+      item.innerHTML = '<i class="material-icons">' + name + '</i>' +
+                       '<div class="icon-label">' + name + '</div>';
+      container.appendChild(item);
+    });
+  });
+</script>
+</body>
+</html>
